@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0D2B45;
+  --color-teal: #00A896;
+  --color-tl: #E1F5EE;
+  --color-td: #085041;
+  --color-w: #ffffff;
+  --color-gb: #F7F6F2;
+  --color-gl: #F1EFE8;
+  --color-gm: #D3D1C7;
+  --color-rl: #FCEBEB;
+  --color-rd: #791F1F;
+  --color-rm: #E24B4A;
+  --color-ol: #FEF0E6;
+  --color-od: #7A3810;
+  --color-om: #D85A30;
+  --color-al: #FAEEDA;
+  --color-ad: #633806;
+  --color-am: #EF9F27;
+  --color-bl: #E6F1FB;
+  --color-bd: #0C447C;
+  --color-tx: #1A1A18;
+  --color-ts: #5F5E5A;
+  --color-br: rgba(0,0,0,.1);
+  
+  --color-ira: #1565C0;
+  --color-ira-l: #E3F0FC;
+  --color-eda: #2E7D32;
+  --color-eda-l: #E8F5E9;
+  
+  --radius-r: 8px;
+  --radius-rl2: 12px;
+
+  --font-sans: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-gb);
+    color: var(--color-tx);
+    min-height: 100vh;
+  }
+
+  /* Form components override */
+  input[type="number"],
+  input[type="text"],
+  select {
+    background: var(--color-gl);
+    border: 0.5px solid var(--color-gm);
+    border-radius: var(--radius-r);
+    padding: 6px 10px;
+    font-size: 12px;
+    font-family: var(--font-mono);
+    color: var(--color-tx);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  input[type="number"]:focus,
+  input[type="text"]:focus,
+  select:focus {
+    border-color: var(--color-teal);
+    background: #fff;
+  }
+  
+  textarea {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    background: var(--color-gl);
+    border: 0.5px solid var(--color-gm);
+    border-radius: var(--radius-r);
+    padding: 10px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--color-tx);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  textarea:focus {
+    border-color: var(--color-teal);
+    background: #fff;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}
